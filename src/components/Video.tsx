@@ -1,3 +1,5 @@
+import { DefaultUi, Player, Youtube } from "@vime/react";
+import "@vime/core/themes/default.css";
 import {
   CaretRight,
   DiscordLogo,
@@ -9,7 +11,12 @@ export function Video() {
   return (
     <div className="flex-1">
       <div className="bg-black flex justify-center">
-        <div className="h-full w-full max-w[1100px] max-h-[60vh] aspect-video"></div>
+        <div className="h-full w-full max-w[1100px] max-h-[60vh] aspect-video">
+          <Player>
+            <Youtube videoId="Ox_zb2cs9zM" />
+            <DefaultUi />
+          </Player>
+        </div>
       </div>
 
       <div className="p-8 max-w-[1100px] mx-auto">
@@ -73,7 +80,8 @@ export function Video() {
             <div className="py-6 leading-relaxed">
               <strong className="text-2xl">Material complementar</strong>
               <p className="text-sm text-gray-200 mt-2">
-                Acesse o material complementar para acelerar o seu desenvolvimento
+                Acesse o material complementar para acelerar o seu
+                desenvolvimento
               </p>
             </div>
             <div className="h-full p-6 flex items-center">
@@ -90,7 +98,8 @@ export function Video() {
             <div className="py-6 leading-relaxed">
               <strong className="text-2xl">Wallpapers exclusivos</strong>
               <p className="text-sm text-gray-200 mt-2">
-                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua máquina
+                Baixe wallpapers exclusivos do Ignite Lab e personalize a sua
+                máquina
               </p>
             </div>
             <div className="h-full p-6 flex items-center">
