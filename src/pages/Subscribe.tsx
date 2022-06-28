@@ -1,9 +1,8 @@
-import { gql, useMutation } from "@apollo/client";
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { useCreateSubscriberMutation } from "../graphql/generated";
-
+import codeMockupImage from "../assets/code-mockup.png";
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -11,7 +10,7 @@ export function Subscribe() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const [createSubscriber, { loading } ] = useCreateSubscriberMutation();
+  const [createSubscriber, { loading }] = useCreateSubscriberMutation();
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
@@ -24,7 +23,7 @@ export function Subscribe() {
     });
 
     navigate("/event");
-  };
+  }
 
   return (
     <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
@@ -68,13 +67,13 @@ export function Subscribe() {
               type="submit"
               disabled={loading}
               className="mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-color disabled:opacity-50"
-              >
+            >
               Garantir minha vaga
             </button>
           </form>
         </div>
       </div>
-      <img className="mt-10" src="/src/assets/code-mockup.png" alt="" />
+      <img className="mt-10" src={codeMockupImage} alt="" />
     </div>
   );
 }
